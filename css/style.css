@@ -1,0 +1,150 @@
+
+#wrapper{
+	width:100%;
+	margin:auto;
+}
+.large_text{
+	font-size:24px;
+	font-weight:bold;
+	margin-bottom:auto;
+	color:#FFF;
+}
+.small_text{
+	font-size:11px;
+	color:#FFF;
+}
+#logo{
+	background:#00337f;
+}
+.content{
+	margin:auto;
+	width:1216px;
+	margin-left: auto;
+	margin-right: auto;}
+.table1{
+	width:1200px;
+	margin-left:4%;
+}
+.fomr{
+	margin-left: 7.5%;
+	margin-bottom: 21px;
+	}
+.image{
+	margin-top:-10px;	
+}
+.heading{
+	color:#2a3753;
+	margin-left: 7%;
+	margin-right: auto;
+}
+.nav1{
+	margin-left: auto;
+	margin-right: auto;
+	width:1201px;
+	margin-top:6px;
+}
+.small{
+	width:5%;
+}
+#button2{
+	margin-left:5px
+	}
+#button1{
+	margin-left:0px;
+}
+#box{
+	border:64px solid #eee;
+	border-radius:6px;
+}
+#box1{
+	border:1px #CCC;
+	box-shadow:1px #CCC;
+}
+#button{
+	margin-left:171px;
+	margin-bottom:5px;
+}
+#image{
+	margin-left:131px;
+}
+#display{
+	width: 146px;
+	height: 91px;
+	float: right;
+	margin-left:79px;
+	margin-top: -76px;
+}
+.imj{
+	width:100%;
+}
+.border{
+	border:2px solid #e7e7e7;	
+	background:#f8f8f8;
+	radius:2px;
+	margin-left:auto;
+	margin-right:auto;
+	padding: 16px;
+	color: #999;
+	font-size: 14px;
+	width: 1108px;
+}
+
+#errorMessage1
+	{
+		border-radius:5px;
+		font-size:18px;
+		width:700px;
+		padding-left:10px;
+		margin-left:231px;
+		color: #a94442;
+		background-color: #f2dede;
+		border-color: #ebccd1;
+		margin-bottom:5px;
+		height: 47px;
+		padding-top: 11px;
+	}
+#errorMessage2
+	{
+		border-radius:5px;
+		font-size:18px;
+		width:700px;
+		padding-left:10px;
+		margin-left:231px;
+		color: #a94442;
+		background-color: #f2dede;
+		border-color: #ebccd1;
+		margin-bottom:5px;
+		height: 47px;
+		padding-top: 11px;
+}
+#delete{
+		color: #3c763d;
+		background-color: #dff0d8;
+		border-color: #d6e9c6;
+		width:700px;
+		font-size:18px;
+		margin-bottom:5px;
+		height: 47px;
+		padding-top: 11px;
+		margin-left:231px;
+		padding-left:10px;
+}
+
+.empty{
+	font-size: 15px;
+	text-align: center;
+	height: 97px;
+	padding: 27px;
+	width: 84%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 44px;
+	position: absolute;
+	border-radius: 8px;
+	color: #666;	
+}
+.news{
+	font-weight:bold;
+	font-size:22px;
+	margin-bottom:0px;
+}
