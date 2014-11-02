@@ -5,15 +5,24 @@ if($_POST)
 {
 	include 'headers/connect_to_mysql.php';	
 	include 'headers/image_upload.php';
+	include 'parse.php';
 	
-    
-    
+	$notificationMessage = "A new {$category} has been published. Click to read.";
+	
 	$title = $_POST['title'];
 	$description = $_POST['description'];
 	$query = "INSERT INTO news(title,description,file,time_cone,category)
 	VALUES ('$title','$description','$file',now(),'$category')";
 	mysqli_query($con,$query)
 	or die('error');
+	
+	$pushNotification = $_POST['pushNotification'];
+	
+	if(isset($pushNotification))
+	{
+		pushNotification($notificationMessage);
+	}
+	
 }	
 ?>
 
@@ -110,6 +119,9 @@ onKeyUp="limitText(this.form.title,this.form.countdown,200);" />
           <input readonly type="text" name="countdown1" value="2000" size="2"  />
         </div>
       </div>
+      
+      <p>Push Notification: </p> <input type="checkbox" name="pushNotification" /> 
+      
       <div class="form-group" id="image">
         <label for="file">News Image</label>
         <input type="file" name="file" id="file" >
