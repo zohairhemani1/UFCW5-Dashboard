@@ -110,7 +110,7 @@
   	$num_rows = mysqli_num_rows($result);
 
 if($num_rows == 0){
-echo "<div class='empty'>No News found  <br>Are yoy looking for some News?<br> <a href='NegotiationUpdates_insert.html'>Add Some News</a>  </div>";
+echo "<div class='empty'><h1 class ='news'><img src='images/1.png'>No News found.</h1>  <br>Are yoy looking for some News?<br> <a href='NegotiationUpdates_insert.html'>Add Some News</a>  </div>";
 }
 else{ 
 	while($row = mysqli_fetch_array($result)){

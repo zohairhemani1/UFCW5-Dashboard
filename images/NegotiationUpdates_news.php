@@ -25,8 +25,14 @@
     function deleteConfirm(id)
 	{
 		var message = confirm("Want to delete?");
-
+	if(message == true){
+	return true;
 	}
+	else{
+		return false;
+	}
+	}
+	
    </script>
 
 
@@ -84,7 +90,11 @@
     <div class='alert alert-success' role='alert'>Your News <b>successfully</b> deleted</div>";
    	header  ('location: NegotiationUpdates_news.php') ; 	 
 	}
+	else{
+	
+	}
    ?>
+	 
    
     <form class="table1" action="NegotiationUpdates_insert.php" method="post">
           <table class="table table-bordered">
@@ -97,7 +107,12 @@
         </thead>
         <tbody>
 <?php			
-  	
+  	$num_rows = mysqli_num_rows($result);
+
+if($num_rows == 0){
+echo "<div class='empty'><h1 class ='news'><img src='images/2.png'>No News found.</h1>  <br>Are yoy looking for some News?<br> <a href='NegotiationUpdates_insert.html'>Add Some News</a>  </div>";
+}
+else{ 
 	while($row = mysqli_fetch_array($result)){
 	$update_id = $row['update_id'];
     $title = $row['title'];
@@ -107,7 +122,9 @@
  	echo "<td>${title}</td>";
  echo"<td><a href='NegotiationUpdates_update.php?update_id=${update_id}'<button type='button' class='btn btn-primary btn-lg btn-block' id='button1'>UPDATE</button></a> <a href='NegotiationUpdates_delete.php?update_id=${update_id}' onClick='return deleteConfirm(30);'><button type='button' class='btn btn-default btn-lg btn-block' id='button2'>DELETE</button></a></td>
           </tr>";
-       }        
+       } 
+}
+	mysql_close($con); 
 ?>
            </tboby>
 		  </table>

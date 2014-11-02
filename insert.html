@@ -21,22 +21,6 @@ function limitText(limitField, limitCount, limitNum) {
 }
 </script>
 <script type="text/javascript">
-/**function validateForm() {
-   var x = document.forms["form"]["title"].value;
-   if ( x == null || x == "" ) {
-      //alert("First name must be filled out");
-	  document.getElementById("errorMessage1").innerHTML = "<b>News title</b> must be filled out";
-      return false;
-   }
-
- var x = document.forms["form"]["description"].value;
-   if ( x == null || x == "" ) {
-      //alert("First name must be filled out");
-	  document.getElementById("errorMessage2").innerHTML = "<b>News description </b> must be filled out";
-      return false;
-   }
-}
-*/
 </script>
 <script type="text/javascript">
 function formatText(el,tag){
@@ -69,8 +53,8 @@ el.value=el.value.substring(0,el.selectionStart)+newText+el.value.substring(el.s
                      <li class='dropdown'>
                         <a href='#' data-toggle='dropdown' class='dropdown-toggle'>NEWS <b class='caret'></b></a>
                         <ul class='dropdown-menu'>
-						    <li><a href='insert.html'>ADD NEWS</a></li>
-                            <li><a href='update.html'>UPDATE NEWS</a></li>
+						    <li><a href='insert.php'>ADD NEWS</a></li>
+                            <li><a href='update.php'>UPDATE NEWS</a></li>
                         </ul>
                     </li>
                     <li class='dropdown'>
