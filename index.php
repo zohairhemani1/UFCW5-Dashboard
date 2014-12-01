@@ -1,7 +1,17 @@
+<?php 
+	include 'headers/connect_to_mysql.php';
+	include 'session.php';
+	$app_id = $_SEESION['app_id'];
+$query = "SELECT * FROM app_name where app_id='$app_id' ";
+	$result = mysqli_query($con,$query);
+	$row = mysqli_fetch_array($result);
+	$logo = $row['logo'];
+	$cover = $row['cover']; 
+?>
 <!doctype html>
-<html>
-<head>
+<html><head>
 <meta charset="utf-8">
+
 <title>UFCW 5</title>
 <link href="css/bootstrap.css" type="text/css" rel="stylesheet">
 <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
@@ -15,16 +25,22 @@
 <body>
 <div id="wrapper">
 <div id="logo">
-  <center>
-    <img src="images/logo.png" name="logo" alt="">
-    <p class="large_text">YOUR NEIGHBORHOOD UNION</p>
-    <p class="small_text">Standing together to improve the lives of our members, our families and our community.</p>
-  </center>
-</div>
-<!-- <div class="image"> <img src="images/1.png" name="img" width="100%"> </div> -->
-<div class="nav1">
+ <center>
+    <img src="<?php echo $logo; ?>" name="logo" alt="">
+   <?php echo "logo->".$logo;
+?>    <div class="nav1">
   <?php include 'headers/header_navigation.php'; ?>
+  </div></center>
 </div>
+
+
+    <!--<p class="large_text">YOUR NEIGHBORHOOD UNION</p>
+    <p class="small_text">Standing together to improve the lives of our members, our families and our community.</p>
+ -->
+ 
+</div>
+ <div class="image"> <img src="images/2.png" name="img" width="100%"> </div> 
+<!--<div nav 1>-->
 <div class="content">
   <h2 class="heading">About Us</h2>
   <p class="border">United Food and Commercial Workers Local 5 is a 33,000 member labor union based in San Jose, California. The local is a progressive voice in the labor movement and the community with a strong tradition of member advocacy and involvement. It is an affiliate of the United Food and Commercial Workers International union based in Washington DC.<br>
@@ -33,6 +49,12 @@
     Local 5 policy is set by its thirty four member executive board. Members from all industries the union represents sits on its board. The activism of the board and the union’s membership assure the democratic nature organization and perpetuate its progressive tradition.<br>
     Local 5’s geographic jurisdiction extends from Crescent City on the state’s North Coast to King City at the foot of the Salinas Valley. In Agriculture the union has California and Arizona as its jurisdiction.<br>
     In addition to the union’s headquarters in San Jose offices are maintained by the local in Eureka, Hayward, Martinez, Novato, Salinas, San Francisco, Santa Cruz and South San Francisco.</p>
+   
 </div>
+
+</div>
+<div id="footer_index">
+ <?php  include 'headers/header_footer.php'; ?>
+    </div>
 </body>
 </html>

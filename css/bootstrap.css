@@ -882,9 +882,9 @@ th {
   content: "\e200";
 }
 * {
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	/* [disabled]-moz-box-sizing: border-box; */
+	box-sizing: border-box;
 }
 *:before,
 *:after {
@@ -2699,8 +2699,7 @@ select[multiple].input-lg {
   min-height: 27px;
 }
 .form-horizontal .form-group {
-  margin-right: -15px;
-  margin-left: -15px;
+
 }
 @media (min-width: 768px) {
   .form-horizontal .control-label {

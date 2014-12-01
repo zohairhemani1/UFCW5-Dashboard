@@ -19,6 +19,7 @@
 		$newArray['title'] = $title;
 		$newArray['file'] = $fileImage;
 		$newArray['news_id'] = $news_id;
+
 		$returnArray[] = $newArray;
 
 	}

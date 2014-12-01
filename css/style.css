@@ -1,9 +1,162 @@
+
+body{
+	background-color:#FFF;
+	width:100%;	
+}
+.action{
+	width: 20%;
+		
+}
+#alert{
+	margin-left: 25%;
+	margin-top: 8%;
+	position: absolute;
+	width: 49%;
+}
+#alert2{
+	margin-left: 25%;
+	margin-top: 6.4%;
+	position: absolute;
+	width: 49%;
+}
+#alert1{
+	margin-left: 25%;
+	margin-top: 6.2%;
+	position: absolute;
+	width: 49%;
+}
+.match{
+	
+	margin-left:10%;
+	margin-top:3px;
+}
+.notice{
+		margin-top:5px;
+		margin-left:40%;
+		color:#777;	
+	
+}
+.forget{
+	margin-left: 12%;
+	color: #fff;
+	margin-top:8px;
+	
+}
+#input{
+	color: #777;
+	font-size: 16px;
+	margin-left: 5.5%;
+	margin-top: 10px;
+}
+#input1{
+	color: #777;
+	font-size: 16px;
+	margin-left: 5.5%;
+	margin-top: 10px;
+	width:47%;	
+}
+#login{
+	width: 100%;
+	height: 32px;
+	background: none repeat scroll 0% 0% #222;
+}
+.left{
+	float:right;
+	color:#FFF;
+	margin-right: 4%;
+	padding-top: 6px;
+}
+
+.checkbox1{
+	margin-left: 10%;
+	margin-top: -25px;	
+}
+#submit{
+	margin-left: 33%;
+	margin-bottom: 5px;
+	font-size: 16px;
+	font-weight: bold;
+	width: 31%;
+	background-color: #4C9ED9;
+	color: #FFF;
+	margin-top: 24px;
+}
+.reset{
+	margin-left: 50%;
+	margin-bottom: 5px;
+	font-size: 16px;
+	font-weight: bold;
+	width: 41%;
+	background-color: #4C9ED9;
+	color: #FFF;
+	margin-top: 24px;
+	height:33px;
+	border-radius:5px;	
+		
+	
+}
+#name{ 	
+	width: 117%;
+	padding: 4%;
+	height: 46px;
+	margin-left: 7%;
+	background-color: #FBFBFB;
+	font-size: 15px;
+}
+#pass{
+	width: 117%;
+	padding: 4%;
+	height: 46px;
+	margin-left: 7%;
+	background-color: #FBFBFB;
+	font-size: 15px;
+}	
+
+#pass1{
+	width: 117%;
+	padding: 4%;
+	height: 46px;
+	margin-left: 7%;
+	background-color: #FBFBFB;
+	font-size: 15px;
+}
+
+.table_width{
+	width:50%;
+}
+#footer_index {	
+	background-color:#00337f;
+	width:100%;
+	margin-left: auto;
+	position:absolute;	
+	
+}
+#footer{
+	background-color:#00337f;
+	width:100%;
+	margin-left: auto;
+	bottom:0px;
+	position:fixed;	
+	
+}
+.paragraph{
+	color: #FFF;
+	font-size: 14px;
+	text-align: center;
+	margin-top:7px;
+}
+#notification{
+	font-size:14px;
+	font-weight:bold;
+	margin-left:5%;
+	margin-bottom: 29px;
+}
 .face{
 	margin-bottom:7px;
 }
 #wrapper{
 	width:100%;
-	margin:auto;
+	
 }
 .large_text{
 	font-size:24px;
@@ -17,39 +170,79 @@
 }
 #logo{
 	background:#00337f;
+	margin-bottom:-20px;
+	width: 100%;
 }
 .content{
 	margin:auto;
-	width:1216px;
+	width:90%;
 	margin-left: auto;
-	margin-right: auto;}
+	margin-right: auto;
+	margin-bottom:70px;
+
+	}
 .table1{
-	width:1200px;
-	margin-left:4%;
+	width:87%;
+	margin-left: auto;
+	margin-right: auto;
+	height: 54%;
+	margin-bottom:70px;
+
+	}
+.form{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 6%;
+    background-color: #f1f1f1;
+    width: 28%;
+    height: 297px;
+    border-radius: 9px;
+    border: 1px solid #CCC;
+
+	}
+.form1{
+	margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+    background-color: #f1f1f1;
+    width: 28%;
+    border-radius: 9px;
+    border: 1px solid #CCC;
+	height:150px;
+	}
+.form2{
+	margin-left: auto;
+    margin-right: auto;
+    margin-top: 4%;
+    background-color: #f1f1f1;
+    width: 28%;
+    border-radius: 9px;
+    border: 1px solid #CCC;
+	height:270px;
+
 }
 .fomr{
-	margin-left: 7.5%;
-	margin-bottom: 21px;
-	}
+	margin: 4% auto 3% 6.5%;
+}
 .image{
-	margin-top:-10px;	
 }
 .heading{
 	color:#2a3753;
-	margin-left: 7%;
+	margin-left: 3.2%;
 	margin-right: auto;
 }
 .nav1{
 	margin-left: auto;
 	margin-right: auto;
-	width:1201px;
+	width:87%;
 	margin-top:6px;
 }
 .small{
-	width:5%;
+	width:7%;
 }
 #button2{
-	margin-left:5px
+	margin-left:2%;
+	margin-right:auto;
 	}
 #button1{
 	margin-left:0px;
@@ -63,8 +256,18 @@
 	box-shadow:1px #CCC;
 }
 #button{
-	margin-left:171px;
-	margin-bottom:5px;
+	margin-left: 432px;
+	margin-bottom: 5px;
+	width: 177px;
+	font-size: 16px;
+	font-weight: bold;
+	}
+#button_stay{
+	margin-left: 432px;
+	margin-bottom: 5px;
+	width: 200px;
+	font-size: 16px;
+	font-weight: bold;
 }
 #image{
 	margin-left:131px;
@@ -72,9 +275,10 @@
 #display{
 	width: 146px;
 	height: 91px;
-	float: right;
-	margin-left:79px;
-	margin-top: -76px;
+	float: left;
+	margin-left: 25%;
+	position: absolute;
+	margin-top: -80px;
 }
 .imj{
 	width:100%;
@@ -88,7 +292,7 @@
 	padding: 16px;
 	color: #999;
 	font-size: 14px;
-	width: 1108px;
+	width: 94%;
 }
 
 #errorMessage1
@@ -135,15 +339,14 @@
 .empty{
 	font-size: 15px;
 	text-align: center;
-	height: 97px;
 	padding: 27px;
 	width: 84%;
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 44px;
-	position: absolute;
 	border-radius: 8px;
 	color: #666;	
+	position:absolute;
 }
 .news{
 	font-weight:bold;
