@@ -1,12 +1,13 @@
 <?php 
 	include 'headers/connect_to_mysql.php';
 	include 'session.php';
-	$app_id = $_SEESION['app_id'];
-$query = "SELECT * FROM app_name where app_id='$app_id' ";
-	$result = mysqli_query($con,$query);
-	$row = mysqli_fetch_array($result);
+	$app_id = $_SESSION['app_id'];
+	$query_index = "SELECT * FROM app_name where app_id='$app_id' ";
+	$result_index = mysqli_query($con,$query_index);
+	$row = mysqli_fetch_array($result_index);
 	$logo = $row['logo'];
 	$cover = $row['cover']; 
+	$about_us = $row['about_us'];
 ?>
 <!doctype html>
 <html><head>
@@ -24,14 +25,19 @@ $query = "SELECT * FROM app_name where app_id='$app_id' ";
 
 <body>
 <div id="wrapper">
+    <div id="login">
+    <p class="left">	<?php echo strtoupper($username) ; ?>&nbsp; | &nbsp; <a href="logout.php">Logout</a> </p>
+    </div>    
 <div id="logo">
  <center>
-    <img src="<?php echo $logo; ?>" name="logo" alt="">
-   <?php echo "logo->".$logo;
-?>    <div class="nav1">
+    <img src="logo/<?php echo $logo; ?>" name="logo" alt="">
+     
+     </div>
+     <div class="nav1">
   <?php include 'headers/header_navigation.php'; ?>
-  </div></center>
-</div>
+  </center>
+  </div>
+
 
 
     <!--<p class="large_text">YOUR NEIGHBORHOOD UNION</p>
@@ -39,17 +45,11 @@ $query = "SELECT * FROM app_name where app_id='$app_id' ";
  -->
  
 </div>
- <div class="image"> <img src="images/2.png" name="img" width="100%"> </div> 
+ <div class="image"> <img src="cover/<?php echo $cover; ?>" name="img" width="100%"> </div> 
 <!--<div nav 1>-->
 <div class="content">
   <h2 class="heading">About Us</h2>
-  <p class="border">United Food and Commercial Workers Local 5 is a 33,000 member labor union based in San Jose, California. The local is a progressive voice in the labor movement and the community with a strong tradition of member advocacy and involvement. It is an affiliate of the United Food and Commercial Workers International union based in Washington DC.<br>
-    Local 5 members work primarily in retail grocery and meat with growing numbers employed in department stores, retail drug stores, candy stores, jewelry stores, agriculture and food processing, wholesale meat, seafood processing, financial services, education and the cannabis industry among others.<br>
-    Wherever Local 5 members work they have a strong voice on the job.<br>
-    Local 5 policy is set by its thirty four member executive board. Members from all industries the union represents sits on its board. The activism of the board and the union’s membership assure the democratic nature organization and perpetuate its progressive tradition.<br>
-    Local 5’s geographic jurisdiction extends from Crescent City on the state’s North Coast to King City at the foot of the Salinas Valley. In Agriculture the union has California and Arizona as its jurisdiction.<br>
-    In addition to the union’s headquarters in San Jose offices are maintained by the local in Eureka, Hayward, Martinez, Novato, Salinas, San Francisco, Santa Cruz and South San Francisco.</p>
-   
+  <p class="border"><?php echo $about_us;?></p>   
 </div>
 
 </div>

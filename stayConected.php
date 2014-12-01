@@ -1,11 +1,11 @@
 <?php
 	include 'session.php';
-	$app_idd = $_SESSION['app_id'];
+	$app_id = $_SESSION['app_id'];
 
 	include 'headers/connect_to_mysql.php';
 	$category = $_GET['category'];
 	
-	$query = "SELECT * FROM stayConected where ap_id = '$app_idd' LIMIT 50";
+	$query = "SELECT * FROM stayConected where app_id = '$app_idd' LIMIT 50";
 	$result = mysqli_query($con,$query);
 
 ?>
@@ -63,8 +63,8 @@
         <input type="text" class="form-control" id="searchTerm" name= "searchTerm" placeholder="Enter Search Term">
       </div>
       <button type="submit" class="btn btn-success">Search</button>
-      <a href="insert_stayConected.php">
-      	<button type="button" class="btn btn-primary">Add Stay Conected	
+      <a href="insert_stayConnected.php">
+      	<button type="button" class="btn btn-primary">Add Stay Connected	
         </button>
       </a>
 
@@ -115,7 +115,7 @@
   	$num_rows = mysqli_num_rows($result);
 
 if($num_rows == 0){
-echo "<div class='empty'><h1 class ='news'><img src='images/1.png' width='50px' height='44px' class='face'>No Stay Coneted found.</h1>  <br>Are you looking for some Stay Coneted?<br> <a href='insert_stayConected.php'> Add some Stay Coneted</a> </div>";
+echo "<div class='empty'><h1 class ='news'><img src='images/1.png' width='50px' height='44px' class='face'>No Stay Connected found.</h1>  <br>Are you looking for some Stay Connected?<br> <a href='insert_stayConected.php'> Add some Stay Connected</a> </div>";
 }
 else{ 
 	while($row = mysqli_fetch_array($result)){

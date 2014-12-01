@@ -2,13 +2,13 @@
 
 	include 'session.php';
 
+	include 'headers/connect_to_mysql.php';	
+	include 'headers/image_logo.php';
+	include 'headers/image_cover.php';
 
 
 if($_POST)
 {
-	include 'headers/connect_to_mysql.php';	
-	include 'headers/image_logo.php';
-	include 'headers/image_cover.php';
 	//include 'parse.php';
 		
     
@@ -26,6 +26,8 @@ if($_POST)
 		echo "Push Sent.";
 	}
 	*/
+	echo "logo-->".$logo ;
+	echo "cover-->".$cover;
 	header("Location: app_name.php?insert=true");	
 
 }	
@@ -103,8 +105,7 @@ el.value=el.value.substring(0,el.selectionStart)+newText+el.value.substring(el.s
         <p class="list-group-item disabled"> <font size="3px">Insert App</font> </p>
       </div>
       <div class="form-group"> 
-        <!--<div id="errorMessage1"></div>-->
-        <label for="inputEmail3" class="col-sm-2 control-label" >App title</label>
+         <label for="inputEmail3" class="col-sm-2 control-label" >App title</label>
         <div class="col-sm-10">
           <input required type="text" class="form-control" id="inputEmail3" placeholder="Enter  App title" name="name" onKeyDown="limitText(this.form.title,this.form.countdown,200);" 
 onKeyUp="limitText(this.form.title,this.form.countdown,200);" />
@@ -113,8 +114,16 @@ onKeyUp="limitText(this.form.title,this.form.countdown,200);" />
           <br>
         </div>
       </div>
-       <p id="notification">Push Notification &nbsp;&nbsp;&nbsp;&nbsp; <input type="checkbox" checked name="pushNotification" /> 
-            </p>
+      <div class="form-group"> 
+         <label for="inputEmail3" class="col-sm-2 control-label" >About Us</label>
+        <div class="col-sm-10">
+          <input required type="text" class="form-control" id="inputEmail3" placeholder="Enter  About us" name="about_us" onKeyDown="limitText(this.form.title,this.form.countdown1,2000);" 
+onKeyUp="limitText(this.form.title,this.form.countdown1,2000);" />
+          Maximum characters:
+          <input readonly type="text" name="countdown1" size="1"  value="2000">
+          <br>
+        </div>
+      </div>
           
            <label for="inputEmail3" class="col-sm-2 control-label" >Logo</label>
     		 <input  type="file" name="logo" id="file" >

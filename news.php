@@ -1,10 +1,10 @@
 <?php
 
 	include 'session.php' ;
-	$app_idd = $_SESSION['app_id'];
+	$app_id = $_SESSION['app_id'];
 	include 'headers/connect_to_mysql.php';
 	$category = $_GET['category'];
-	$query_news = "SELECT * FROM news where category like '$category' AND app_id = '$app_idd'  limit 50";
+	$query_news = "SELECT * FROM news where category like '$category' AND app_id = '$app_id'  limit 50";
 	$result_news = mysqli_query($con,$query_news);
 ?>
 
@@ -90,7 +90,7 @@
         <thead>
           <tr>
             <th class="small">#</th>
-            <th><?php echo $category ;?></th>
+            <th><?php echo strtoupper($category) ;?></th>
             <th>ACTION</th>
   	          </tr>
         </thead>

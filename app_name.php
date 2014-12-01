@@ -101,9 +101,10 @@
         <thead>
           <tr>
             <th class="small">#</th>
-            <th>App Name</th>
+            <th>APP NAME</th>
+  	         <th>ABOUT US</th>
             <th>ACTION</th>
-  	          </tr>
+              </tr>
         </thead>
         <tbody>
       
@@ -117,12 +118,13 @@ else{
 	while($row = mysqli_fetch_array($result)){
 	$app_id = $row['app_id'];
     $name = $row['name'];
-       echo "app_id-->".$app_id;
-	   echo "app+name-->".$name;  
+	$about_us = $row['about_us'];
 		 echo"<tr>";
 
     echo"<td>${app_id}</td>";
  	echo "<td class='table_width'>${name}</td>";
+ 	echo "<td>${about_us}</td>";
+
  echo"<td>
         <a href='update_app.php?app_id=${app_id}'<button type='button' class='btn btn-primary btn-lg btn-block' id='button1'>UPDATE</button></a>
         <a href='delete_app.php?app_id=${news_id}' onClick='return deleteConfirm(30);'><button type='button' class='btn btn-danger' id='button2'>DELETE</button></a>
