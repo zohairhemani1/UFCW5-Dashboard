@@ -1,6 +1,6 @@
 <?php
 	include 'session.php';
-
+	include 'image.php' ;
 	include 'headers/connect_to_mysql.php';	
 	$office_id = $_GET['office_id'];
 	$category = $_GET['category'];
@@ -12,7 +12,7 @@
 		$address = $_POST['address'];
 		$phone_no = $_POST['phone_no'];
 		$website = $_POST['website'];
-		$query = "UPDATE location SET time_cone = now(),  office_title = '$office_title',file = '$file', address = '$address',
+		$query = "UPDATE location SET time_cone = now(),  office_title = '$office_title', address = '$address',
 		 phone_no = '$phone_no',website = '$website'  WHERE office_id = '$office_id'";
 		$result = mysqli_query($con,$query);
 		header ('Location: location.php?update=true');
@@ -108,20 +108,19 @@ el.value=el.value.substring(0,el.selectionStart)+newText+el.value.substring(el.s
 </head>
 
 <body>
-<div id="wrapper">
-      <div id="login">
-    <p class="left">	<?php echo  strtoupper($username);?> &nbsp;|&nbsp;&nbsp;<a href="logout.php">Logout</a> </h4>	
-    </div>    
+		<div id="wrapper">
+		 			<div id="login">
+			<p class="left">	<?php echo strtoupper($username) ; ?>&nbsp; | &nbsp; <a href="logout.php">Logout</a> </p>
+			 </div>    
 
-  <div id="logo">
-    <center>
-      <img src="images/logo.png" name="logo" alt="">
-  <div class="nav1">
-    <?php include 'headers/header_navigation.php'; ?>
-  </div>
+			<div id="logo">
+			<center><img src="logo/<?php echo $logo; ?>" name="logo" alt="">
+			</center>
+			</div>
+			 <div class="nav1">
+		  <?php include 'headers/header_navigation.php'; ?>
 
-    </center>
-  </div>
+</div>
  <div class="fomr">
     <form name="search-form" id="search-form" class="form-inline" role="form" enctype="multipart/form-data" action="insert.php">
        <div class="form-group">
@@ -140,50 +139,29 @@ el.value=el.value.substring(0,el.selectionStart)+newText+el.value.substring(el.s
       <div class="form-group">
         <label for="inputEmail3" class="col-sm-2 control-label" >Office title</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="inputEmail3" placeholder="" name="office_title" value="<?php echo $office_title;  ?>" onKeyDown="limitText(this.form.title,this.form.countdown,200);" onKeyUp="limitText(this.form.title,this.form.countdown,200);" />
-          Maximum Character
-          <input readonly type="text" name="countdown" value="200" />
-        </div>
+          <input type="text" class="form-control" id="inputEmail3" placeholder="" name="office_title" value="<?php echo $office_title;  ?>" />        
+      </div>
       </div>
       <div class="form-group">
         <label for="inputEmail3" class="col-sm-2 control-label">Address</label>
         <div class="col-sm-10">
-          <textarea rows="5" class="form-control" id="inputEmail3" placeholder="" name="address" onKeyDown="limitText(this.form.title,this.form.countdown1,2000);" onKeyUp="limitText(this.form.title,this.form.countdown1,2000);" />
-          <?php echo $address;  ?>
-          </textarea>
-          <br>
-          <input type="button" value="Bold" onClick="formatText (description,'b');" />
-          <input type="button" value="Italic" onClick="formatText (description,'i');" />
-          <input type="button" value="Underline" onClick="formatText (description,'u');" />
-          <input type="file" name="file" id="uploadit" onClick="formatText (description,'img');"  />
-          Maximum Character
-          <input readonly type="text" name="countdown1" value="2000" />
+          <textarea rows="5" class="form-control" id="inputEmail3" placeholder="" name="address" /><?php echo $address;  ?></textarea>
         </div>
       </div>
       <div class="form-group">
         <label for="inputEmail3" class="col-sm-2 control-label" >Phone-No</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="inputEmail3" placeholder="" name="phone_no" value="<?php echo $phone_no;  ?>" onKeyDown="limitText(this.form.title,this.form.countdown,200);" onKeyUp="limitText(this.form.title,this.form.countdown,200);" />
-          Maximum Character
-          <input readonly type="text" name="countdown" value="200" />
+          <input type="text" class="form-control" id="inputEmail3" placeholder="" name="phone_no" value="<?php echo $phone_no;  ?>"  />
         </div>
       </div>
       <div class="form-group">
         <label for="inputEmail3" class="col-sm-2 control-label" >Website</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="inputEmail3" placeholder="" name="website" value="<?php echo $website;  ?>" onKeyDown="limitText(this.form.title,this.form.countdown,200);" onKeyUp="limitText(this.form.title,this.form.countdown,200);" />
-          Maximum Character
-          <input readonly type="text" name="countdown" value="200" />
-        </div>
+          <input type="text" class="form-control" id="inputEmail3" placeholder="" name="website" value="<?php echo $website;  ?>" />
+             </div>
       </div>
+     <button type="submit" class="btn btn-default" id="button" formmethod="post">Post</button>
 
-      <div class="form-group" id="image">
-        <label for="file">News Image</label>
-        <input type="file" name="file" value =""  >
-        <br>
-      </div>
-      <div class="display"> <img src="upload/<?php echo $file;?>" id="display"/> </div>
-      <button type="submit" class="btn btn-default" id="button" formmethod="post">Post</button>
     </form>
   </div>
 </div>

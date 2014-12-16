@@ -1,11 +1,12 @@
 <?php
 	include 'session.php';
-	$app_id = $_SESSION['app_id'];
-
+	include 'image.php';
 	include 'headers/connect_to_mysql.php';
+
+	$app_id = $_SESSION['app_id'];
 	$category = $_GET['category'];
 	
-	$query = "SELECT * FROM stayConected where app_id = '$app_idd' LIMIT 50";
+	$query = "SELECT * FROM stayConected app_id = '$app_id'  limit 50";
 	$result = mysqli_query($con,$query);
 
 ?>
@@ -40,19 +41,19 @@
 </head>
 
 <body>
-	<div id="wrapper">
-        <div id="login">
-    <p class="left">	<?php echo  strtoupper($username);?> &nbsp;|&nbsp;&nbsp;<a href="logout.php">Logout</a> </h4>	
-    </div>    
+		<div id="wrapper">
+		 			<div id="login">
+			<p class="left">	<?php echo strtoupper($username) ; ?>&nbsp; | &nbsp; <a href="logout.php">Logout</a> </p>
+			 </div>    
 
-    <div id="logo">
-    <center><img src="images/logo.png" name="logo" alt="">
- <div class="nav1">
-     	<?php include 'headers/header_navigation.php';?>
-	 </div>	
-     </center>
-</div>
-    
+			<div id="logo">
+			<center><img src="logo/<?php echo $logo; ?>" name="logo" alt="">
+			</center>
+			</div>
+			 <div class="nav1">
+		  <?php include 'headers/header_navigation.php'; ?>
+
+</div>    
      
      
      
@@ -63,7 +64,7 @@
         <input type="text" class="form-control" id="searchTerm" name= "searchTerm" placeholder="Enter Search Term">
       </div>
       <button type="submit" class="btn btn-success">Search</button>
-      <a href="insert_stayConnected.php">
+      <a href="insert_stayConected.php">
       	<button type="button" class="btn btn-primary">Add Stay Connected	
         </button>
       </a>
@@ -119,7 +120,7 @@ echo "<div class='empty'><h1 class ='news'><img src='images/1.png' width='50px' 
 }
 else{ 
 	while($row = mysqli_fetch_array($result)){
-	$stayConected_id = $row['stayConected_id'];
+		$stayConected_id = $row['stayConected_id'];
 		$name = $row['name'];
 		$designation = $row['designation'];
 		$address = $row['address'];

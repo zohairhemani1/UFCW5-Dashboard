@@ -14,9 +14,7 @@ echo"
       <li> <a href='news.php?category=events'>Upcoming Events </a> </li>
       <li> <a href='news.php?category=union'>Shop Union</a> </li>
       <li> <a href='location.php'>Office Locations</a> </li>
-      <li> <a href='stayConected.php'>Stay Conected</a> 
-
-            </li>
+      <li> <a href='stayConected.php'>Stay Connected</a></li>
     </ul>
   </div>
 </nav>";

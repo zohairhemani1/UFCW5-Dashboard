@@ -1,7 +1,7 @@
 <?php
-
+$app_id = $_SESSION['app_id'];
 	include 'session.php' ;
-	$app_id = $_SESSION['app_id'];
+	include 'image.php';
 	include 'headers/connect_to_mysql.php';
 	$category = $_GET['category'];
 	$query_news = "SELECT * FROM news where category like '$category' AND app_id = '$app_id'  limit 50";
@@ -39,20 +39,33 @@
 
 <body>
 	<div id="wrapper">
-    <div id="login">
-    <p class="left">	<?php echo  strtoupper($username);?> &nbsp;|&nbsp;&nbsp;<a href="logout.php">Logout</a> </h4>	
-    </div>    
-    <div id="logo">
-    <center><img src="images/logo.png" name="logo" alt="">
- <div class="nav1">
-     	<?php include 'headers/header_navigation.php'; ?>
-	 </div>
-     
-     </center>
+		 	<div id="login">
+             <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" id="nav" data-toggle="dropdown" role="button" aria-expanded="false">
+          <img src="images/arbish.jpg" width="15px" height="20px"> &nbsp;<?php echo  strtoupper($username);?>
+           <span class="caret"></span></a>
+         
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="info.php">Account info</a></li>
+            <li><a href="help.php">Help</a></li>
+            <li class="divider"></li>
+            <li><a href="logout.php">Logout</a></li>
+          </ul>
+        </li>
+
+      </ul>
+</p>
 </div>
-    
-     
-     
+
+			<div id="logo">
+			<center><img src="logo/<?php echo $logo; ?>" name="logo" alt="">
+			</center>
+			</div>
+			 <div class="nav1">
+		  <?php include 'headers/header_navigation.php'; ?>
+
+</div>
      
  <div class="fomr">
     <form name="search-form" id="search-form" class="form-inline" role="form" enctype="multipart/form-data" action="insert.php" method="post">
@@ -66,7 +79,7 @@
         </button>
       </a>
 
-
+	
     </form>
   </div>
 	   <?php
@@ -113,9 +126,9 @@ else{
     echo"<td>${news_id}</td>";
  	echo "<td class='table_width'>${title}</td>";
  echo"<td  class='action'>
-        <a href='update.php?category=$category&&news_id=${news_id}'<button type='button' class='btn btn-primary btn-lg btn-block' id='button1'>UPDATE</button></a>
-        <a href='delete.php?category=$categroy&&news_id=${news_id}' onClick='return deleteConfirm(30);'><button type='button' class='btn btn-danger' id='button2'>DELETE</button></a>
-        <a href='view.php?category=$category&&news_id=${news_id}'><button type='button' class='btn btn-success' id='button2'>VIEW HTML</button></a>
+        <a href='update.php?category={$category}&&news_id=${news_id}'><button type='button' class='btn btn-primary btn-lg btn-block' id='button1'>UPDATE</button></a>
+          <a href='delete.php?category={$category}&&news_id=${news_id}' onClick='return deleteConfirm(30);'><button type='button' class='btn btn-danger' id='button2'>DELETE</button></a>
+        <a href='view.php?category={$category}&&news_id=${news_id}'<button type='button' class='btn btn-success' id='button2'>VIEW HTML</button></a>
 </td>
           </tr>";
        }        

@@ -1,10 +1,10 @@
 <?php
 	include 'session.php';
-
+	include 'image.php';
 	include 'headers/connect_to_mysql.php';
 	$category = $_GET['category'];
-	
-	$query = "SELECT * FROM location LIMIT 50";
+	$app_id = $_SESSION['app_id'];
+	$query = "SELECT * FROM location where app_id like '$app_id' LIMIT 50";
 	$result = mysqli_query($con,$query);
 
 ?>
@@ -40,20 +40,19 @@
 
 <body>
 	<div id="wrapper">
-        <div id="login">
-    <p class="left">	<?php echo  strtoupper($username);?> &nbsp;|&nbsp;&nbsp;<a href="logout.php">Logout</a> </h4>	
-    </div>    
+ 
+		 			<div id="login">
+			<p class="left">	<?php echo strtoupper($username) ; ?>&nbsp; | &nbsp; <a href="logout.php">Logout</a> </p>
+			 </div>    
 
-    <div id="logo">
-    <center><img src="images/logo.png" name="logo" alt="">
- <div class="nav1">
-     	<?php include 'headers/header_navigation.php'; ?>
-	 </div>	
-     </center>
+			<div id="logo">
+			<center><img src="logo/<?php echo $logo; ?>" name="logo" alt="">
+			</center>
+			</div>
+			 <div class="nav1">
+		  <?php include 'headers/header_navigation.php'; ?>
+
 </div>
-    
-     
-     
      
  <div class="fomr">
     <form name="search-form" id="search-form" class="form-inline" role="form" enctype="multipart/form-data" action="insert_location.php">

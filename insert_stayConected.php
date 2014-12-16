@@ -1,8 +1,9 @@
 <?php
 	include 'session.php';
+	include 'image.php';
 	include 'headers/connect_to_mysql.php';	
+	$app_id = $_SESSION['app_id'];
 
-$category = $_GET['category'];
 
 if($_POST)
 {
@@ -18,8 +19,8 @@ if($_POST)
 		$fax_no = $_POST['fax_no'];
 		$email =  $_POST['email']; 
 		
-	$query = "INSERT INTO stayConected (name,designation,address,phone_no1,phone_no2,fax_no,email,time_cone)
-	VALUES ('$name','$designation','$address','$phone_no1','$phone_no2','$fax_no','$email',Now())";
+	$query = "INSERT INTO stayConected (name,designation,address,phone_no1,phone_no2,fax_no,email,time_cone,app_id)
+	VALUES ('$name','$designation','$address','$phone_no1','$phone_no2','$fax_no','$email',now(),'$app_id')";
 	mysqli_query($con,$query)
 	or die('error1');
 		header ("Location: stayConected.php?insert=true");
@@ -67,22 +68,20 @@ el.value=el.value.substring(0,el.selectionStart)+newText+el.value.substring(el.s
 </head>
 
 <body>
-<div id="wrapper">
+		<div id="wrapper">
+		 			<div id="login">
+			<p class="left">	<?php echo strtoupper($username) ; ?>&nbsp; | &nbsp; <a href="logout.php">Logout</a> </p>
+			 </div>    
 
-      <div id="login">
-    <p class="left">	<?php echo strtoupper($username) ; ?>&nbsp; | &nbsp; <a href="logout.php">Logout</a> </h4>	
-    </div>    
+			<div id="logo">
+			<center><img src="logo/<?php echo $logo; ?>" name="logo" alt="">
+			</center>
+			</div>
+			 <div class="nav1">
+		  <?php include 'headers/header_navigation.php'; ?>
 
-
-  <div id="logo">
-    <center>
-      <img src="images/logo.png" name="logo" alt="">
-     <div class="nav1">
-    <?php include 'headers/header_navigation.php'; ?>
-  </div>
-    </center>
-  </div>
-    <div class="fomr">
+</div> 
+   <div class="fomr">
     <form name="search-form" id="search-form" class="form-inline" role="form" enctype="multipart/form-data" action="insert_stayConected.php">
        <div class="form-group">
         <label class="sr-only" for="searchTerm">Search Term</label>

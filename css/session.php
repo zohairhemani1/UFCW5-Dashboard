@@ -1,4 +1,5 @@
 <?php
+		include 'headers/connect_to_mysql.php';	
 
 	session_start();
 	
@@ -16,6 +17,9 @@
 		$_COOKIE['app_id'] = $row['app_id'];
 		$app_id = $_SESSION['app_id'];
 	}
+	
+
+	
 	else if(isset($_SESSION['user_name']))
 	{
 		$username = $_SESSION['user_name'];

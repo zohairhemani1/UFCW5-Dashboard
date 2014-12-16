@@ -1,5 +1,6 @@
 <?php
 	include 'session.php';
+	include 'image.php';
 	include 'headers/connect_to_mysql.php';	
 	$stayConected_id = $_GET['stayConected_id'];
 	$category = $_GET['category'];
@@ -112,20 +113,20 @@ el.value=el.value.substring(0,el.selectionStart)+newText+el.value.substring(el.s
 </head>
 
 <body>
-<div id="wrapper">
-      <div id="login">
-    <p class="left">	<?php echo  strtoupper($username);?> &nbsp;|&nbsp;&nbsp;<a href="logout.php">Logout</a> </h4>	
-    </div>    
+		<div id="wrapper">
+		 			<div id="login">
+			<p class="left">	<?php echo strtoupper($username) ; ?>&nbsp; | &nbsp; <a href="logout.php">Logout</a> </p>
+			 </div>    
 
-  <div id="logo">
-    <center>
-      <img src="images/logo.png" name="logo" alt="">
-  <div class="nav1">
-    <?php include 'headers/header_navigation.php'; ?>
-  </div>
+			<div id="logo">
+			<center><img src="logo/<?php echo $logo; ?>" name="logo" alt="">
+			</center>
+			</div>
+			 <div class="nav1">
+		  <?php include 'headers/header_navigation.php'; ?>
 
-    </center>
-  </div>
+</div>
+		
  <div class="fomr">
     <form name="search-form" id="search-form" class="form-inline" role="form" enctype="multipart/form-data" action="insert_stayConected.php">
        <div class="form-group">
@@ -144,21 +145,18 @@ el.value=el.value.substring(0,el.selectionStart)+newText+el.value.substring(el.s
       <div class="form-group">
         <label for="inputEmail3" class="col-sm-2 control-label" >Name</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="inputEmail3" placeholder="" name="name" value="<?php echo $name;  ?>" onKeyDown="limitText(this.form.title,this.form.countdown,200);" onKeyUp="limitText(this.form.title,this.form.countdown,200);" />
-          Maximum Character
-          <input readonly type="text" name="countdown" value="200" />
-        </div>
+          <input type="text" class="form-control" id="inputEmail3" placeholder="" name="name" value="<?php echo $name;  ?>"/>         </div>
       </div>
      <div class="form-group">
         <label for="inputEmail3" class="col-sm-2 control-label" >Designation</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="inputEmail3" placeholder="" name="designation" value="<?php echo $designation;  ?>" onKeyDown="limitText(this.form.title,this.form.countdown,200);" onKeyUp="limitText(this.form.title,this.form.countdown,200);" />
+          <input type="text" class="form-control" id="inputEmail3" placeholder="" name="designation" value="<?php echo $designation;  ?>" />
         </div>
       </div>
       <div class="form-group">
         <label for="inputEmail3" class="col-sm-2 control-label">Address</label>
         <div class="col-sm-10">
-          <textarea rows="5" class="form-control" id="inputEmail3" placeholder="" name="address" onKeyDown="limitText(this.form.title,this.form.countdown1,2000);" onKeyUp="limitText(this.form.title,this.form.countdown1,2000);" />
+          <textarea rows="5" class="form-control" id="inputEmail3" placeholder="" name="address" />
           <?php echo $address;  ?>
           </textarea>
           <br>
@@ -173,27 +171,27 @@ el.value=el.value.substring(0,el.selectionStart)+newText+el.value.substring(el.s
       <div class="form-group">
         <label for="inputEmail3" class="col-sm-2 control-label" >Phone-No(1)</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="inputEmail3" placeholder="" name="phone_no1" value="<?php echo $phone_no1;  ?>" onKeyDown="limitText(this.form.title,this.form.countdown,200);" onKeyUp="limitText(this.form.title,this.form.countdown,200);" />
+          <input type="text" class="form-control" id="inputEmail3" placeholder="" name="phone_no1" value="<?php echo $phone_no1;  ?>" />
         </div>
       </div>
       <div class="form-group">
         <label for="inputEmail3" class="col-sm-2 control-label" >Phone-No(2)</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="inputEmail3" placeholder="" name="phone_no2" value="<?php echo $phone_no2;  ?>" onKeyDown="limitText(this.form.title,this.form.countdown,200);" onKeyUp="limitText(this.form.title,this.form.countdown,200);" />
+          <input type="text" class="form-control" id="inputEmail3" placeholder="" name="phone_no2" value="<?php echo $phone_no2;  ?>" >
 
         </div>
       </div>
       <div class="form-group">
         <label for="inputEmail3" class="col-sm-2 control-label" >fax_No</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="inputEmail3" placeholder="" name="fax_no" value="<?php echo $fax_no;  ?>" onKeyDown="limitText(this.form.title,this.form.countdown,200);" onKeyUp="limitText(this.form.title,this.form.countdown,200);" />
+          <input type="text" class="form-control" id="inputEmail3" placeholder="" name="fax_no" value="<?php echo $fax_no;  ?>" />
         </div>
       </div>
 
       <div class="form-group">
         <label for="inputEmail3" class="col-sm-2 control-label" >Email</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="inputEmail3" placeholder="" name="email" value="<?php echo $email;  ?>" onKeyDown="limitText(this.form.title,this.form.countdown,200);" onKeyUp="limitText(this.form.title,this.form.countdown,200);" />
+          <input type="text" class="form-control" id="inputEmail3" placeholder="" name="email" value="<?php echo $email;  ?>"/>
          </div>
       </div>
       <button type="submit" class="btn btn-default" id="button_stay">Submit StayConected</button>

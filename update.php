@@ -4,7 +4,7 @@
 	include 'headers/connect_to_mysql.php';	
 
 	include 'session.php';
-
+	include 'image.php';
 	$news_id = $_GET['news_id'];
 	$category = $_GET['category'];
 	
@@ -18,7 +18,6 @@
 		$result_update = mysqli_query($con,$query_update)
 		or die('error');	
 		header("Location: news.php?category=$category&&update=true");	
-
 	}
 
 	else
@@ -118,7 +117,7 @@ el.value=el.value.substring(0,el.selectionStart)+newText+el.value.substring(el.s
   </div>
   <div id="logo">
     <center>
-      <img src="images/logo.png" name="logo" alt="">
+      <img src="logo/<?php echo logo; ?>" name="logo" alt="">
       <div class="nav1">
         <?php include 'headers/header_navigation.php'; ?>
       </div>

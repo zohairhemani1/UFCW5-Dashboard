@@ -3,6 +3,7 @@ $category = $_GET['category'];
 	$app_id = $_SESSION['app_id'];
 
 	include 'session.php';
+	include 'image.php';
 	include 'headers/connect_to_mysql.php';	
 
 	include 'headers/image_upload.php';
@@ -77,20 +78,19 @@ el.value=el.value.substring(0,el.selectionStart)+newText+el.value.substring(el.s
 </head>
 
 <body>
-<div id="wrapper">
-      <div id="login">
-    <p class="left">	<?php echo strtoupper($username) ; ?>&nbsp; | &nbsp; <a href="logout.php">Logout</a> </h4>	
-    </div>    
+		<div id="wrapper">
+		 			<div id="login">
+			<p class="left">	<?php echo strtoupper($username) ; ?>&nbsp; | &nbsp; <a href="logout.php">Logout</a> </p>
+			 </div>    
 
-  <div id="logo">
-    <center>
-      <img src="images/logo.png" name="logo" alt="">
-     <div class="nav1">
-    <?php include 'headers/header_navigation.php'; ?>
-  	
-  </div>
-    </center>
-  </div>
+			<div id="logo">
+			<center><img src="logo/<?php echo $logo; ?>" name="logo" alt="">
+			</center>
+			</div>
+			 <div class="nav1">
+		  <?php include 'headers/header_navigation.php'; ?>
+
+</div>
     <div class="fomr">
     <form name="search-form" id="search-form" class="form-inline" role="form" enctype="multipart/form-data" action="insert.php">
        <div class="form-group">

@@ -1,9 +1,10 @@
 <?php
-	include 'session.php';
+	include 'image.php';
 	include 'headers/connect_to_mysql.php';	
 	include 'headers/image_upload.php';
 
-$category = $_GET['category'];
+
+	$app_id = $_SESSION['app_id'];
 
 if($_POST)
 {
@@ -16,11 +17,11 @@ if($_POST)
 		$phone_no = $_POST['phone_no'];
 		$website = $_POST['website'];
 		
-	$query = "INSERT INTO location(office_title,address,phone_no,website,file,time_cone)
-	VALUES ('$office_title','$address','$phone_no','$website','$file',now())";
-	mysqli_query($con,$query)
-	or die('error1');
-	header ('Location: location.php?insert=true');
+		$query_location = "INSERT INTO location(office_title,address,phone_no,website,time_cone,app_id)
+		VALUES ('$office_title','$address','$phone_no','$website',now(),'$app_id')";
+		mysqli_query($con,$query_location)
+		or die('error1');
+		header ('Location: location.php?insert=true');
 	
 /*	$pushNotification = $_POST['pushNotification'];
 	$notificationMessage = "A new news has been inserted.";
@@ -78,19 +79,19 @@ el.value=el.value.substring(0,el.selectionStart)+newText+el.value.substring(el.s
 </head>
 
 <body>
-<div id="wrapper">
-     <div id="login">
-    <p class="left">	<?php echo  strtoupper($username);?> &nbsp;|&nbsp;&nbsp;<a href="logout.php">Logout</a> </h4>	
-    </div>    
+		<div id="wrapper">
+		 			<div id="login">
+			<p class="left">	<?php echo strtoupper($username) ; ?>&nbsp; | &nbsp; <a href="logout.php">Logout</a> </p>
+			 </div>    
 
-  <div id="logo">
-    <center>
-      <img src="images/logo.png" name="logo" alt="">
-     <div class="nav1">
-    <?php include 'headers/header_navigation.php'; ?>
-  </div>
-    </center>
-  </div>
+			<div id="logo">
+			<center><img src="logo/<?php echo $logo; ?>" name="logo" alt="">
+			</center>
+			</div>
+			 <div class="nav1">
+		  <?php include 'headers/header_navigation.php'; ?>
+
+</div>
     <div class="fomr">
     <form name="search-form" id="search-form" class="form-inline" role="form" enctype="multipart/form-data" action="insert_location.php">
        <div class="form-group">
@@ -112,26 +113,26 @@ el.value=el.value.substring(0,el.selectionStart)+newText+el.value.substring(el.s
  
         <label for="inputEmail3" class="col-sm-2 control-label" >Office title</label>
         <div class="col-sm-10">
-          <input required type="text" class="form-control" id="inputEmail3" placeholder="Enter  News title" name="office_title" />
+          <input required type="text" class="form-control" id="inputEmail3" placeholder="Enter  office title" name="office_title" />
           <br>
         </div>
       </div>
        <div class="form-group">
-        <label for="inputEmail3" class="col-sm-2 control-label">Adress</label>
+        <label for="inputEmail3" class="col-sm-2 control-label">Address</label>
         <div class="col-sm-10">
-          <textarea  required  class="form-control" id="inputEmail3" placeholder="Enter Description" name="address" ></textarea>
+          <textarea  required  class="form-control" id="inputEmail3" placeholder="Enter location" name="address" ></textarea>
         </div>
       </div>
             <div class="form-group">
         <label for="inputEmail3" class="col-sm-2 control-label" >Phone_No</label>
         <div class="col-sm-10">
-          <input required type="text" class="form-control" id="inputEmail3" placeholder="" name="phone_no"/>
+          <input required type="text" class="form-control" id="inputEmail3" placeholder="Enter phone-no" name="phone_no"/>
         </div>
       </div>
       <div class="form-group">
         <label for="inputEmail3" class="col-sm-2 control-label" >Website</label>
         <div class="col-sm-10">
-          <input required type="text" class="form-control" id="inputEmail3" placeholder="" name="website" />
+          <input required type="text" class="form-control" id="inputEmail3" placeholder="Enter website" name="website" />
         </div>
       </div>
 

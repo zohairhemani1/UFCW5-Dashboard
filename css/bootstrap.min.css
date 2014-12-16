@@ -831,7 +831,7 @@ select {
 	content: "\e200"
 }
 * {
-	/* [disabled]-webkit-box-sizing: border-box; */
+	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	/* [disabled]box-sizing: border-box; */
 }
@@ -3384,9 +3384,9 @@ textarea.input-group-sm>.form-control, textarea.input-group-sm>.input-group-addo
 	float: left
 }
 .navbar-nav>li>a {
-	padding-top: 15px;
-	padding-bottom: 15px
-}
+	height:0px;
+	padding-left:11px;
+	}
 .navbar-nav.navbar-right:last-child {
 	margin-right: -15px
 }
