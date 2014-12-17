@@ -1,24 +1,75 @@
-.container{
-
-	
-	
+@media screen and (max-width: 800px) {
+.size{
+	width: auto;
+	max-height: 50px;
+	max-width: 100%;
+	float:left;
 }
-.name{
-	color: #808080;
-	width: 81%;
-	padding-left: 4px;
+}
+#uploadFile{
+	margin-left:18%;	
+}
+.info_button{
+	background-color: #4C9ED9;
+	color: white;
+	width: 22%;
+	height: 35px;
+	border-radius: 4px;
+	border-color: black;
+	font-weight: bold;
+	font-size: 16px;
+	margin-bottom: 8px;
+	margin-top: 22px;
+	margin-left: 13%;
 }
 .password{
 	color: #808080;
-	width: 81%;
-	padding-left: 4px;
+	padding-left: 62px;
+
 }
 .email{
 	color: #808080;
-	width: 81%;
-	padding-left: 4px;
+	padding-left: 82px;
 
 }
+.name{
+	color: #808080;
+	padding-left: 58px;
+}
+.change{
+	color: #4C9ED9;
+	margin-left:39.5%;
+}
+.change1{
+	color: #4C9ED9;
+	margin-left: 40%;
+}
+.change2{
+	color: #4C9ED9;	
+	margin-left: 40%;
+}
+#form1{
+	background-color: rgb(214, 214, 214);
+	width: 33%;
+	border-radius: 7px;
+	border: 1px none;
+	margin-left:auto;
+	margin-right:auto;
+}
+.info_submit{
+	margin-left: 18%;
+	background-color: #4C9ED9;
+	color: white;
+	width: 10%;
+	height: 35px;
+	border-radius: 4px;
+	border-color: black;
+	font-weight: bold;
+	font-size: 16px;
+	margin-bottom: 8px;
+	margin-top: 22px;
+}
+
 #change1{
 color: #A9A9A9;
 padding-left: 259px;
@@ -41,6 +92,8 @@ padding-left: 259px;
 #nav{
 	margin-right:5%;
 	height:35px;	
+	float:right;
+	margin-top:-5px;
 	
 }
 .setting{
@@ -51,17 +104,10 @@ padding-left: 259px;
 	
 }
 .account{
-padding-top: 6px;
-color: #808080;
-font-weight: bold;
-padding-left: 9px;
-left: 0px;
-position: absolute;
-width: 96%;
-margin-right: auto;
-right: 0px;
-margin-left: auto;
-background-color: #F1F1F1;
+	color: #808080;
+	font-weight: bold;
+	background-color: #F1F1F1;
+	padding-left: 9px;
 }	
 #blah{
 	margin-top:80%;
@@ -73,6 +119,9 @@ background-color: #F1F1F1;
 #imgInp{
 	margin-top:80%;
 	
+}
+#space{
+	margin-left:.5%;
 }
 .fileUpload {
 	position: relative;
@@ -207,7 +256,7 @@ background-color: #F1F1F1;
 	margin-top: 10px;
 	width: 47%;
 }
-#login {
+#login{
 	height: 38px;
 	background: none repeat scroll 0% 0% #222;
 	padding-top: 2px;
@@ -316,8 +365,6 @@ background-color: #F1F1F1;
 	color: #FFF;
 }
 #logo {
-	background: #00337f;
-	margin-bottom: -20px;
 }
 .center {
 	left: 50%;
@@ -369,7 +416,17 @@ background-color: #F1F1F1;
 	height: 270px;
 }
 .fomr {
-	margin: 4% auto 3% 6.5%;
+	margin: 12% auto 3% 6.5%;
+}
+@media only screen 
+and (min-device-width : 300px) 
+and (max-device-width : 800px) {
+ .fomr {
+	 	margin:0px;
+	 	margin-top:90px!important;
+ 		margin-left:3%;
+		margin-bottom:6.5%;
+	  }
 }
 .image {
 	margin-top: -20px;
@@ -379,16 +436,14 @@ background-color: #F1F1F1;
 	margin-left: 3.2%;
 	margin-right: auto;
 }
-.nav1 {
+#nav1 {
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: 1.5%;
 }
 .small {
 	width: 7%;
 }
 #button2 {
-	margin-left: 2%;
 	margin-right: auto;
 }
 #button1 {
@@ -500,4 +555,7 @@ background-color: #F1F1F1;
 	font-weight: bold;
 	font-size: 22px;
 	margin-bottom: 0px;
+}
+.info_image{
+	border:2px solid;	
 }

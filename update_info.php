@@ -1,21 +1,23 @@
 <?php
+	
 	include 'headers/connect_to_mysql.php';	
 	$app_id = $_SESSON['app_id'];
 	include 'session.php';
 	include 'image.php';
 	$user_id = $_GET['user_id'];
-	$category = $_GET['category'];
 	
 	
 	if($_POST)
 	{
-		include 'headers/image_upload.php';
+	include 'headers/image_info.php';
+	include 'headers/image_upload.php';
 		$user_name = $_POST['user_name'];
 		$password = $_POST['password'];
 		$email = $_POST['email'];
-		$query_update = "UPDATE user SET  user_name = '$user_name',image = '$image', password = '$password'   WHERE user_id = '$user_id'";
+		$query_update = "UPDATE user SET  user_name = '$user_name',image = '$image', password = '$password',image ='$image'   WHERE user_id = '$user_id'";
 		$result_update = mysqli_query($con,$query_update)
 		or die('error');	
+
 	}
 
 	else
@@ -37,10 +39,14 @@
 <head>
 <meta charset="utf-8">
 <title>UFCW 5</title>
+<link href="css/style.css" type="text/css" rel="stylesheet">
 <link href="css/bootstrap.css" type="text/css" rel="stylesheet">
 <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
-<link href="css/style.css" type="text/css" rel="stylesheet">
 <script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="jquery/jquery-1.11.1.js"></script>
+<script src="jquery/bootstrap.min.js"></script>
 <script type="text/javascript">
 	document.getElementById("uploadBtn").onchange = function () {
     document.getElementById("uploadFile").value = this.value;
@@ -105,11 +111,14 @@
            </div>
       </div>
 <input id="uploadFile" placeholder="Choose File" disabled="disabled" />
-<div class="fileUpload btn btn-primary">
+<div id="space" class="fileUpload btn btn btn-primary">
     <span>Upload</span>
-    <input id="uploadBtn" type="file" class="upload" />
+    <input id="uploadBtn" name="image" type="file" class="upload" />
 </div><br>
     <button type="submit" class="info_submit">Save changes</button>
+
+    </form>
+    </div></div>></div></div></div>
      <div id="footer">
   <?php  include 'headers/header_footer.php'; ?>
 </div>

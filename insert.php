@@ -1,11 +1,9 @@
 <?php
-$category = $_GET['category'];
+	include 'headers/connect_to_mysql.php';	
+	$category = $_GET['category'];
 	$app_id = $_SESSION['app_id'];
-
 	include 'session.php';
 	include 'image.php';
-	include 'headers/connect_to_mysql.php';	
-
 	include 'headers/image_upload.php';
 
 
@@ -20,7 +18,7 @@ if($_POST)
 	$query = "INSERT INTO news(title,description,file,time_cone,category,app_id)
 	VALUES ('$title','$description','$file',now(),'$category','$app_id')";
 	mysqli_query($con,$query)
-	or die('error');
+	or die('error1');
 
 		header("Location: news.php?category={$category}&&insert=true");	
 /*	$pushNotification = $_POST['pushNotification'];

@@ -1,7 +1,9 @@
-
 <?php
+	include 'headers/image_cover.php';
+	include 'headers/image_info.php';
 	include'session.php';
 	include 'headers/connect_to_mysql.php';
+	include 'image.php';
 	$app_id = $_SESSION['app_id'];
 	$query_user = "SELECT * FROM user WHERE user_id = '$app_id' ";
 	$result_user = mysqli_query($con,$query_user)
@@ -11,8 +13,6 @@
 	$password = $row['password'];
 	$email = $row['email'];
 	$image = $row['image'];
-	include 'image.php';
-
 ?>
 
 	
@@ -32,7 +32,8 @@
 	<body>
 
 		 			<div id="login">
-			<p class="left">	<?php echo strtoupper($username) ; ?>&nbsp; | &nbsp; <a href="logout.php">Logout</a> </p>
+			<p class="left">    <img src="image/<?php echo $image; ?>" width="20px" height="20px" class="info_image" name="info" alt="">
+	<?php echo strtoupper($username) ; ?>&nbsp; | &nbsp; <a href="logout.php">Logout</a> </p>
 			 </div>    
 
 			<div id="logo">
@@ -44,21 +45,18 @@
 
 </div>
      
-<div class="container">
+<form id="form1">
 	<div class="account">
     <P>Account Information</P>
     </div>
-<form id="form1">
-        <div class="setting">
-<label for="name" class="name">Username</label>
-	<span class="replace1"><?php echo $user_name ;?></span><br>
-<label for="password" class="password" >Password</label>
-	<span class="replac1"><?php echo $password; ?></span><br>
-<label for="email" class="email">Email</label>
-	<span class="replace3"><?php echo $email ; ?></span><br>
-
-	<a href="update_info.php?user_id=<?php echo $app_id; ?>"><button type='button' class='submit' >Update</button></a>
+    <img src="image/<?php echo $image; ?>" width="20px" height="20px" class="info_image" name="info" alt="">
+<label for="name" class="change">Username<span class="name"><?php echo $user_name ;?></span></label><br>
+<label for="password" class="change1" >Password<span class="password"><?php echo $password; ?></span></label><br>
+<label for="email" class="change2">Email<span class="email"><?php echo $email ; ?></span></label><br>
 	
+
+	<a href="update_info.php?user_id=<?php echo $app_id; ?>"><button type='button' class='info_button' >Update</button></a>
+	</form>
 
 </div>
 </div></div>

@@ -1,24 +1,25 @@
-<?php
-$app_id = $_SESSION['app_id'];
-	include 'session.php' ;
-	include 'image.php';
-	include 'headers/connect_to_mysql.php';
-	$category = $_GET['category'];
-	$query_news = "SELECT * FROM news where category like '$category' AND app_id = '$app_id'  limit 50";
-	$result_news = mysqli_query($con,$query_news);
+		<?php 
+		include 'headers/connect_to_mysql.php';
+		include 'session.php';
+		include 'image.php';
+		include 'headers/image_info.php';
+		$category = $_GET['category'];
+		$app_id = $_SESSION['app_id'];
+		$query_news = "SELECT * FROM news where category like '$category' AND app_id = '$app_id' limit 50";
+		$result_news = mysqli_query($con,$query_news)
+		or die('error1');
+
 ?>
-
-
 
 <!doctype html>
 <html>
 <head>
-	
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>UFCW 5</title>
 <link href="css/bootstrap.css" type="text/css" rel="stylesheet">
 <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet" >
 <link href="css/style.css" type="text/css" rel="stylesheet">
+<link href="css/styles.css" type="text/css" rel="stylesheet">
 <script src="jquery/bootstrap.min.js"></script>
 <script src="jquery/jquery-1.11.1.js"></script>
 <script src="js/jquery-1.11.1.min.js"></script>
@@ -35,6 +36,7 @@ $app_id = $_SESSION['app_id'];
 		}
 	}
 	</script>
+       <script src="js/responsive-nav.js"></script>
 </head>
 
 <body>
@@ -57,18 +59,20 @@ $app_id = $_SESSION['app_id'];
       </ul>
 </p>
 </div>
-
+		</div></div>	
 			<div id="logo">
-			<center><img src="logo/<?php echo $logo; ?>" name="logo" alt="">
-			</center>
-			</div>
-			 <div class="nav1">
+		    <header style="background-color:<?php echo $color;?>">
+           <center>
+      <div class='logo'><img class="size" src="logo/<?php echo $logo;?>" style='' border="0" alt="Null"></div>
+		  </center>
 		  <?php include 'headers/header_navigation.php'; ?>
-
 </div>
-     
+</div>
+     </header>
  <div class="fomr">
-    <form name="search-form" id="search-form" class="form-inline" role="form" enctype="multipart/form-data" action="insert.php" method="post">
+
+    <form name="search-form" id="search-form" class="form-inline" role="form" enctype="multipart/form-data" 
+    action="insert.php" method="post">
        <div class="form-group">
         <label class="sr-only" for="searchTerm">Search Term</label>
         <input type="text" class="form-control" id="searchTerm" name= "searchTerm" placeholder="Enter Search Term">
@@ -126,7 +130,7 @@ else{
     echo"<td>${news_id}</td>";
  	echo "<td class='table_width'>${title}</td>";
  echo"<td  class='action'>
-        <a href='update.php?category={$category}&&news_id=${news_id}'><button type='button' class='btn btn-primary btn-lg btn-block' id='button1'>UPDATE</button></a>
+        <a href='update.php?category={$category}&&news_id=${news_id}'><button type='button' class='btn btn-primary' id='button1'>UPDATE &nbsp; &nbsp;</button></a>
           <a href='delete.php?category={$category}&&news_id=${news_id}' onClick='return deleteConfirm(30);'><button type='button' class='btn btn-danger' id='button2'>DELETE</button></a>
         <a href='view.php?category={$category}&&news_id=${news_id}'<button type='button' class='btn btn-success' id='button2'>VIEW HTML</button></a>
 </td>
@@ -141,6 +145,16 @@ else{
 <div id="footer">
  <?php  include 'headers/header_footer.php'; ?>
 
-</div>    
+</div>  
+ <script src='js/fastclick.js'></script>
+<script src='js/scroll.js'></script>
+<script src='js/fixed-responsive-nav.js'></script>
+ 
     </body>
     </html>
+ 
+    <script>
+      var navigation = responsiveNav("#nav1", {
+        customToggle: "#nav-toggle"
+      });
+    </script>

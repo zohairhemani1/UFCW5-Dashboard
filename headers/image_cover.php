@@ -1,5 +1,4 @@
 <?php
-$ifExist = false;
 $allowedExts = array("gif", "jpeg", "jpg", "png");
 $temp = explode(".", $_FILES["cover"]["name"]);
 $extension = end($temp);
@@ -13,3 +12,4 @@ $extension = end($temp);
 
 
 ?>
+

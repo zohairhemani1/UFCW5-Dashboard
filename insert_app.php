@@ -135,7 +135,7 @@ onKeyUp="limitText(this.form.title,this.form.countdown1,2000);" />
         
         <input  type="file" name="cover" id="file" >
         <br>
-      
+      <input type="color" name="color" class="color" />
       <button type="submit" class="btn btn-default" id="button">Submit App</button>
     </div>
     

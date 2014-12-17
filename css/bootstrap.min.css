@@ -2455,7 +2455,8 @@ textarea.input-lg, select[multiple].input-lg {
 .btn-primary {
 	color: #fff;
 	background-color: #428bca;
-	border-color: #357ebd
+	border-color: #357ebd;
+	margin-bottom: 1px;
 }
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
 	color: #fff;
@@ -2476,7 +2477,8 @@ textarea.input-lg, select[multiple].input-lg {
 .btn-success {
 	color: #fff;
 	background-color: #5cb85c;
-	border-color: #4cae4c
+	border-color: #4cae4c;
+	margin-bottom: 1px;
 }
 .btn-success:hover, .btn-success:focus, .btn-success:active, .btn-success.active, .open>.dropdown-toggle.btn-success {
 	color: #fff;
@@ -2539,7 +2541,8 @@ textarea.input-lg, select[multiple].input-lg {
 .btn-danger {
 	color: #fff;
 	background-color: #d9534f;
-	border-color: #d43f3a
+	border-color: #d43f3a;
+	margin-bottom: 1px;
 }
 .btn-danger:hover, .btn-danger:focus, .btn-danger:active, .btn-danger.active, .open>.dropdown-toggle.btn-danger {
 	color: #fff;
@@ -3508,8 +3511,7 @@ textarea.input-group-sm>.form-control, textarea.input-group-sm>.input-group-addo
 }
 }
 .navbar-default {
-	color:#FFF;
-	background-color:#00337f;
+	color:#555;
 }
 .navbar-default .navbar-brand {
 	/* color: #777 
@@ -3525,7 +3527,7 @@ textarea.input-group-sm>.form-control, textarea.input-group-sm>.input-group-addo
 	color: #777 */
 }
 .navbar-default .navbar-nav>li>a {
-	color:#FFF; 
+	color:#555; 
 	}
 .navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus {
 	color: yellow;
