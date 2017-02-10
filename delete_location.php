@@ -1,8 +1,9 @@
-<?php
-	include 'headers/connect_to_mysql.php';	
+<?php 
+	include 'headers/connect_to_mysql.php';
 	$office_id = $_GET['office_id'];
-	$category = $_GET['category'];
-	$query = "DELETE from location where office_id = '$office_id'";
-	mysqli_query($con,$query);
-	header ('Location: location.php?delete=true');
+	$query_delete = "DELETE FROM location WHERE office_id = $office_id"
+	or die('error while deleting office location');
+	$result = mysqli_query($con,$query_delete);
+	header ('Location: office_location.php?insert=true');		
+
 ?>

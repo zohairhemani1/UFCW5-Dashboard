@@ -1,6 +1,0 @@
-
-
-	RewriteEngine on
-	RewriteRule insert/category/(.*)/ insert.php?category=$1
-						
-			

@@ -1,0 +1,42 @@
+[16-Apr-2015 17:06:27 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in /home/zohairhemani1/public_html/ufcw5/mobile_app/admin/headers/connect_to_mysql.php:11
+Stack trace:
+#0 /home/zohairhemani1/public_html/ufcw5/mobile_app/admin/headers/connect_to_mysql.php(11): PDO->__construct('mysql:host=loca...', 'root', '')
+#1 /home/zohairhemani1/public_html/ufcw5/mobile_app/admin/headers/user_image.php(3): include('/home/zohairhem...')
+#2 /home/zohairhemani1/public_html/ufcw5/mobile_app/admin/insert_user.php(4): include('/home/zohairhem...')
+#3 {main}
+  thrown in /home/zohairhemani1/public_html/ufcw5/mobile_app/admin/headers/connect_to_mysql.php on line 11
+[16-Apr-2015 17:06:43 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in /home/zohairhemani1/public_html/ufcw5/mobile_app/admin/headers/connect_to_mysql.php:11
+Stack trace:
+#0 /home/zohairhemani1/public_html/ufcw5/mobile_app/admin/headers/connect_to_mysql.php(11): PDO->__construct('mysql:host=loca...', 'root', '')
+#1 /home/zohairhemani1/public_html/ufcw5/mobile_app/admin/headers/user_image.php(3): include('/home/zohairhem...')
+#2 /home/zohairhemani1/public_html/ufcw5/mobile_app/admin/insert_user.php(4): include('/home/zohairhem...')
+#3 {main}
+  thrown in /home/zohairhemani1/public_html/ufcw5/mobile_app/admin/headers/connect_to_mysql.php on line 11
+[16-Apr-2015 17:06:57 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in /home/zohairhemani1/public_html/ufcw5/mobile_app/admin/headers/connect_to_mysql.php:11
+Stack trace:
+#0 /home/zohairhemani1/public_html/ufcw5/mobile_app/admin/headers/connect_to_mysql.php(11): PDO->__construct('mysql:host=loca...', 'root', '')
+#1 /home/zohairhemani1/public_html/ufcw5/mobile_app/admin/headers/user_image.php(3): include('/home/zohairhem...')
+#2 /home/zohairhemani1/public_html/ufcw5/mobile_app/admin/insert_user.php(4): include('/home/zohairhem...')
+#3 {main}
+  thrown in /home/zohairhemani1/public_html/ufcw5/mobile_app/admin/headers/connect_to_mysql.php on line 11
+[16-Apr-2015 17:12:04 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in /home/zohairhemani1/public_html/ufcw5/mobile_app/admin/headers/connect_to_mysql.php:11
+Stack trace:
+#0 /home/zohairhemani1/public_html/ufcw5/mobile_app/admin/headers/connect_to_mysql.php(11): PDO->__construct('mysql:host=loca...', 'root', '')
+#1 /home/zohairhemani1/public_html/ufcw5/mobile_app/admin/headers/image_logo.php(3): include('/home/zohairhem...')
+#2 /home/zohairhemani1/public_html/ufcw5/mobile_app/admin/insert_app.php(27): include('/home/zohairhem...')
+#3 {main}
+  thrown in /home/zohairhemani1/public_html/ufcw5/mobile_app/admin/headers/connect_to_mysql.php on line 11
+[16-Apr-2015 17:13:58 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in /home/zohairhemani1/public_html/ufcw5/mobile_app/admin/headers/connect_to_mysql.php:11
+Stack trace:
+#0 /home/zohairhemani1/public_html/ufcw5/mobile_app/admin/headers/connect_to_mysql.php(11): PDO->__construct('mysql:host=loca...', 'root', '')
+#1 /home/zohairhemani1/public_html/ufcw5/mobile_app/admin/headers/image_logo.php(3): include('/home/zohairhem...')
+#2 /home/zohairhemani1/public_html/ufcw5/mobile_app/admin/insert_app.php(27): include('/home/zohairhem...')
+#3 {main}
+  thrown in /home/zohairhemani1/public_html/ufcw5/mobile_app/admin/headers/connect_to_mysql.php on line 11
+[16-Apr-2015 17:14:08 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in /home/zohairhemani1/public_html/ufcw5/mobile_app/admin/headers/connect_to_mysql.php:11
+Stack trace:
+#0 /home/zohairhemani1/public_html/ufcw5/mobile_app/admin/headers/connect_to_mysql.php(11): PDO->__construct('mysql:host=loca...', 'root', '')
+#1 /home/zohairhemani1/public_html/ufcw5/mobile_app/admin/headers/image_logo.php(3): include('/home/zohairhem...')
+#2 /home/zohairhemani1/public_html/ufcw5/mobile_app/admin/insert_app.php(27): include('/home/zohairhem...')
+#3 {main}
+  thrown in /home/zohairhemani1/public_html/ufcw5/mobile_app/admin/headers/connect_to_mysql.php on line 11

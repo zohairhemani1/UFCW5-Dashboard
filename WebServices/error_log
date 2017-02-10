@@ -1,0 +1,4 @@
+[18-Mar-2015 12:01:11 UTC] PHP Fatal error:  Call to undefined function str_get_html() in /home/zohairhemani1/public_html/ufcw5/mobile_app/WebServices/news_category.php on line 19
+[18-Mar-2015 12:01:14 UTC] PHP Fatal error:  Call to undefined function str_get_html() in /home/zohairhemani1/public_html/ufcw5/mobile_app/WebServices/news_category.php on line 19
+[18-Mar-2015 12:06:39 UTC] PHP Fatal error:  Call to undefined function str_get_html() in /home/zohairhemani1/public_html/ufcw5/mobile_app/WebServices/news_category.php on line 19
+[18-Mar-2015 12:08:28 UTC] PHP Fatal error:  Call to undefined function str_get_html() in /home/zohairhemani1/public_html/ufcw5/mobile_app/WebServices/news_category.php on line 21
